@@ -1,0 +1,60 @@
+:root{
+  --bg:#0b1220; --card:#111b2e; --text:#eaf0ff; --muted:#b7c4e1; --link:#7db6ff;
+  --border:rgba(255,255,255,.10); --shadow:0 10px 30px rgba(0,0,0,.35);
+  --radius:18px; --max:900px;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f6f8ff; --card:#fff; --text:#0c1430; --muted:#4b5a7a; --link:#1d5cff;
+         --border:rgba(20,30,60,.12); --shadow:0 10px 30px rgba(30,40,70,.12); }
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial;
+  background: radial-gradient(1000px 600px at 20% -10%, rgba(125,182,255,.25), transparent 60%),
+              radial-gradient(900px 700px at 110% 0%, rgba(255,124,213,.15), transparent 55%),
+              var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+a{color:var(--link); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px}
+header{
+  display:flex; gap:14px; align-items:center; justify-content:space-between;
+  padding:14px 16px; border:1px solid var(--border); border-radius:var(--radius);
+  background:rgba(255,255,255,.06); box-shadow:var(--shadow); backdrop-filter: blur(10px);
+}
+.brand{display:flex; align-items:center; gap:12px}
+.logo{width:44px; height:44px; border-radius:14px; background:linear-gradient(135deg,#7db6ff,#ff7cd5); border:1px solid var(--border)}
+.brand h1{font-size:18px; margin:0}
+.brand p{margin:0; color:var(--muted); font-size:13px}
+nav{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+nav a{padding:8px 10px; border-radius:12px; border:1px solid transparent}
+nav a.active{border-color:var(--border); background:rgba(255,255,255,.08)}
+.card{
+  margin-top:18px;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  background:rgba(255,255,255,.06);
+  box-shadow:var(--shadow);
+  padding:18px;
+}
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.05);
+  color:var(--muted);
+  font-size:12px;
+}
+h2{margin:8px 0 8px; font-size:22px}
+h3{margin:18px 0 8px; font-size:16px}
+p,li{color:var(--muted)}
+.footer{margin-top:16px; display:flex; gap:10px; justify-content:space-between; flex-wrap:wrap; color:var(--muted); font-size:12px}
+hr{border:0; border-top:1px solid var(--border); margin:16px 0}
+.grid{display:grid; grid-template-columns:1fr; gap:14px}
+@media(min-width:820px){ .grid{grid-template-columns:1fr 1fr} }
+.kv{padding:12px; border:1px solid var(--border); border-radius:16px; background:rgba(255,255,255,.05)}
+.kv b{color:var(--text)}
