@@ -1,88 +1,289 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PostRound Terms of Use</title>
-<style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: #111; line-height: 1.6; }
-  h1 { font-size: 2em; margin-bottom: 4px; }
-  nav { margin-bottom: 32px; color: #666; }
-  nav a { color: #16a34a; text-decoration: none; margin-right: 12px; }
-  nav a:hover { text-decoration: underline; }
-  h2 { margin-top: 36px; }
-  h3 { margin-top: 24px; }
-  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #eee; font-size: 0.85em; color: #999; }
-  footer a { color: #16a34a; text-decoration: none; margin-right: 12px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostRound — Terms of Use</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #1a1a18;
+      --muted: #6b6b66;
+      --hint: #9b9b96;
+      --surface: #ffffff;
+      --bg: #f5f4f0;
+      --border: rgba(0,0,0,0.1);
+      --accent: #0F6E56;
+      --app-color: #0F6E56;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #e8e8e4;
+        --muted: #9b9b96;
+        --hint: #6b6b66;
+        --surface: #1e1e1c;
+        --bg: #161614;
+        --border: rgba(255,255,255,0.1);
+        --accent: #1D9E75;
+        --app-color: #1D9E75;
+      }
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page { max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 17px;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: #185FA5; }
+
+    .nav-links { display: flex; gap: 20px; }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--app-color); font-weight: 500; }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 2.5rem;
+    }
+
+    .app-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 13px;
+      background: var(--app-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .app-icon svg { width: 24px; height: 24px; }
+
+    .app-header-text h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 26px;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+    }
+
+    .app-header-text p {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 300;
+      margin-top: 3px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--hint);
+      margin-bottom: 1rem;
+    }
+
+    .lang-block { margin-bottom: 2.5rem; }
+
+    .terms-card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .terms-intro {
+      padding: 1.25rem 1.5rem;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.65;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .terms-section {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .terms-section:last-child { border-bottom: none; }
+
+    .terms-section h3 {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .terms-section p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .terms-section a {
+      color: var(--app-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .terms-section a:hover { opacity: 0.75; }
+
+    hr { border: none; border-top: 0.5px solid var(--border); margin: 2.5rem 0; }
+
+    footer {
+      margin-top: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-copy { font-size: 12px; color: var(--hint); }
+    .footer-links { display: flex; gap: 16px; }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--hint);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--muted); }
+  </style>
 </head>
 <body>
+  <div class="page">
+    <nav>
+      <a href="https://virellodev.com" class="nav-logo">Virello <span>Development</span></a>
+      <div class="nav-links">
+        <a href="index.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html" class="active">Terms</a>
+      </div>
+    </nav>
 
-<h1>PostRound</h1>
-<nav>
-  <a href="index.html">Support</a>
-  <a href="privacy.html">Privacy</a>
-  <a href="terms.html">Terms</a>
-</nav>
+    <div class="app-header">
+      <div class="app-icon">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="8" r="4" stroke="white" stroke-width="1.5" opacity="0.9"/>
+          <path d="M10 12 L10 18" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+          <path d="M7 18 L13 18" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="app-header-text">
+        <h1>PostRound</h1>
+        <p>Terms of Use</p>
+      </div>
+    </div>
 
-<h2>Terms of Use</h2>
+    <p class="section-label">English</p>
+    <div class="lang-block">
+      <div class="terms-card">
+        <p class="terms-intro">By downloading or using PostRound, you agree to these terms.</p>
+        <div class="terms-section">
+          <h3>Use of the app</h3>
+          <p>PostRound is provided for personal, non-commercial use. You may not reverse engineer, modify, or redistribute the app.</p>
+        </div>
+        <div class="terms-section">
+          <h3>Premium subscriptions and purchases</h3>
+          <p>PostRound offers monthly and yearly auto-renewable subscriptions and a one-time lifetime purchase, all managed through Apple's App Store. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. You can manage or cancel your subscription in your Apple ID settings.</p>
+        </div>
+        <div class="terms-section">
+          <h3>No warranty</h3>
+          <p>PostRound is provided as-is. Handicap calculations are estimates for informational purposes only and are not official WHS handicap records. Always verify with your golf club for official handicap registration.</p>
+        </div>
+        <div class="terms-section">
+          <h3>Limitation of liability</h3>
+          <p>Virello Development is not liable for any loss of data or damages arising from use of the app.</p>
+        </div>
+        <div class="terms-section">
+          <h3>Changes</h3>
+          <p>These terms may be updated. Continued use of the app after changes constitutes acceptance.</p>
+        </div>
+        <div class="terms-section">
+          <h3>Contact</h3>
+          <p><a href="mailto:a.faberling@virellodev.com">a.faberling@virellodev.com</a></p>
+        </div>
+      </div>
+    </div>
 
-<h3>English</h3>
+    <hr>
 
-<p>By downloading or using PostRound, you agree to these terms.</p>
+    <p class="section-label">Svenska</p>
+    <div class="lang-block">
+      <div class="terms-card">
+        <p class="terms-intro">Genom att ladda ned eller använda PostRound godkänner du dessa villkor.</p>
+        <div class="terms-section">
+          <h3>Användning av appen</h3>
+          <p>PostRound är avsedd för personligt, icke-kommersiellt bruk. Du får inte bakåtkompilera, modifiera eller vidaredistribuera appen.</p>
+        </div>
+        <div class="terms-section">
+          <h3>Premiumprenumerationer och köp</h3>
+          <p>PostRound erbjuder månads- och årsbaserade automatiskt förnyande prenumerationer samt ett engångsköp för livstid, alla hanterade via Apples App Store. Prenumerationer förnyas automatiskt om de inte avbryts minst 24 timmar innan den aktuella perioden löper ut. Du kan hantera eller avbryta din prenumeration i dina Apple ID-inställningar.</p>
+        </div>
+        <div class="terms-section">
+          <h3>Ingen garanti</h3>
+          <p>PostRound tillhandahålls i befintligt skick. Handicapberäkningar är uppskattningar för informationsändamål och utgör inte officiella WHS-handicapregistreringar. Kontakta alltid din golfklubb för officiell handicapregistrering.</p>
+        </div>
+        <div class="terms-section">
+          <h3>Ansvarsbegränsning</h3>
+          <p>Virello Development ansvarar inte för dataförlust eller skador som uppstår vid användning av appen.</p>
+        </div>
+        <div class="terms-section">
+          <h3>Ändringar</h3>
+          <p>Dessa villkor kan uppdateras. Fortsatt användning av appen efter ändringar innebär att du godkänner de nya villkoren.</p>
+        </div>
+        <div class="terms-section">
+          <h3>Kontakt</h3>
+          <p><a href="mailto:a.faberling@virellodev.com">a.faberling@virellodev.com</a></p>
+        </div>
+      </div>
+    </div>
 
-<h4>Use of the app</h4>
-<p>PostRound is provided for personal, non-commercial use. You may not reverse engineer, modify, or redistribute the app.</p>
-
-<h4>Premium subscriptions and purchases</h4>
-<p>PostRound offers monthly and yearly auto-renewable subscriptions and a one-time lifetime purchase, all managed through Apple's App Store. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. You can manage or cancel your subscription in your Apple ID settings.</p>
-
-<h4>No warranty</h4>
-<p>PostRound is provided as-is. Handicap calculations are estimates for informational purposes only and are not official WHS handicap records. Always verify with your golf club for official handicap registration.</p>
-
-<h4>Limitation of liability</h4>
-<p>VirelloDev is not liable for any loss of data or damages arising from use of the app.</p>
-
-<h4>Changes</h4>
-<p>These terms may be updated. Continued use of the app after changes constitutes acceptance.</p>
-
-<h4>Contact</h4>
-<p><a href="mailto:a.faberling@virellodev.com">a.faberling@virellodev.com</a></p>
-
-<hr>
-
-<h2>Användarvillkor</h2>
-
-<h3>Svenska</h3>
-
-<p>Genom att ladda ned eller använda PostRound godkänner du dessa villkor.</p>
-
-<h4>Användning av appen</h4>
-<p>PostRound är avsedd för personligt, icke-kommersiellt bruk. Du får inte bakåtkompilera, modifiera eller vidaredistribuera appen.</p>
-
-<h4>Premiumprenumerationer och köp</h4>
-<p>PostRound erbjuder månads- och årsbaserade automatiskt förnyande prenumerationer samt ett engångsköp för livstid, alla hanterade via Apples App Store. Prenumerationer förnyas automatiskt om de inte avbryts minst 24 timmar innan den aktuella perioden löper ut. Du kan hantera eller avbryta din prenumeration i dina Apple ID-inställningar.</p>
-
-<h4>Ingen garanti</h4>
-<p>PostRound tillhandahålls i befintligt skick. Handicapberäkningar är uppskattningar för informationsändamål och utgör inte officiella WHS-handicapregistreringar. Kontakta alltid din golfklubb för officiell handicapregistrering.</p>
-
-<h4>Ansvarsbegränsning</h4>
-<p>VirelloDev ansvarar inte för dataförlust eller skador som uppstår vid användning av appen.</p>
-
-<h4>Ändringar</h4>
-<p>Dessa villkor kan uppdateras. Fortsatt användning av appen efter ändringar innebär att du godkänner de nya villkoren.</p>
-
-<h4>Kontakt</h4>
-<p><a href="mailto:a.faberling@virellodev.com">a.faberling@virellodev.com</a></p>
-
-<p>Last updated: 2026-03-26</p>
-
-<footer>
-  <a href="index.html">Support</a>
-  <a href="privacy.html">Privacy</a>
-  <a href="terms.html">Terms</a><br>
-  Publisher: VirelloDev
-</footer>
-
+    <footer>
+      <p class="footer-copy">© 2026 Virello Development. Last updated 2026-03-26.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
