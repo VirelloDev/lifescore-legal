@@ -1,77 +1,349 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LifeScore Support</title>
-<style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: #111; line-height: 1.6; }
-  h1 { font-size: 2em; margin-bottom: 4px; }
-  nav { margin-bottom: 32px; color: #666; }
-  nav a { color: #4f46e5; text-decoration: none; margin-right: 12px; }
-  nav a:hover { text-decoration: underline; }
-  h2 { margin-top: 36px; }
-  h3 { margin-top: 24px; color: #444; }
-  hr { border: none; border-top: 1px solid #eee; margin: 36px 0; }
-  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #eee; font-size: 0.85em; color: #999; }
-  footer a { color: #4f46e5; text-decoration: none; margin-right: 12px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeScore — Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #1a1a18;
+      --muted: #6b6b66;
+      --hint: #9b9b96;
+      --surface: #ffffff;
+      --bg: #f5f4f0;
+      --border: rgba(0,0,0,0.1);
+      --border-mid: rgba(0,0,0,0.18);
+      --accent: #185FA5;
+      --app-color: #185FA5;
+      --app-color-bg: #E6F1FB;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #e8e8e4;
+        --muted: #9b9b96;
+        --hint: #6b6b66;
+        --surface: #1e1e1c;
+        --bg: #161614;
+        --border: rgba(255,255,255,0.1);
+        --border-mid: rgba(255,255,255,0.18);
+        --accent: #5BA3E0;
+        --app-color: #5BA3E0;
+        --app-color-bg: #0c2c44;
+      }
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* Nav */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 17px;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--app-color); font-weight: 500; }
+
+    /* App header */
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 2.5rem;
+    }
+
+    .app-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 13px;
+      background: var(--app-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .app-icon svg { width: 24px; height: 24px; }
+
+    .app-header-text h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 26px;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+    }
+
+    .app-header-text p {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 300;
+      margin-top: 3px;
+    }
+
+    hr { border: none; border-top: 0.5px solid var(--border); margin: 2.5rem 0; }
+
+    /* Sections */
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--hint);
+      margin-bottom: 1rem;
+    }
+
+    .contact-block {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-block p { font-size: 14px; color: var(--muted); font-weight: 300; }
+
+    .contact-block a {
+      font-size: 14px;
+      color: var(--app-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-block a:hover { opacity: 0.75; }
+
+    /* FAQ */
+    .faq-group { margin-bottom: 2rem; }
+
+    .faq-lang {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--hint);
+      margin-bottom: 0.75rem;
+    }
+
+    .faq-list {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .faq-item {
+      padding: 1rem 1.25rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-q {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .faq-a {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-copy { font-size: 12px; color: var(--hint); }
+
+    .footer-links { display: flex; gap: 16px; }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--hint);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--muted); }
+  </style>
 </head>
 <body>
+  <div class="page">
+    <nav>
+      <a href="https://virellodev.com" class="nav-logo">Virello <span>Development</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </nav>
 
-<h1>LifeScore</h1>
-<nav>
-  <a href="index.html">Support</a>
-  <a href="privacy.html">Privacy</a>
-  <a href="terms.html">Terms</a>
-</nav>
+    <div class="app-header">
+      <div class="app-icon">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+          <rect x="11" y="3" width="6" height="6" rx="1.5" fill="white" opacity="0.55"/>
+          <rect x="3" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.55"/>
+          <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+        </svg>
+      </div>
+      <div class="app-header-text">
+        <h1>LifeScore</h1>
+        <p>Daily self-ratings, weekly review &amp; insights</p>
+      </div>
+    </div>
 
-<p><em>For App Store Connect: Support URL</em></p>
+    <p class="section-label">Contact</p>
+    <div class="contact-block">
+      <p>Need help? Reach out directly.</p>
+      <a href="mailto:a.faberling@virellodev.com">a.faberling@virellodev.com</a>
+    </div>
 
-<h2>Support</h2>
+    <p class="section-label">FAQ</p>
 
-<p><strong>Contact</strong><br>
-Email: <a href="mailto:a.faberling@virellodev.com">a.faberling@virellodev.com</a><br>
-Publisher: VirelloDev</p>
+    <div class="faq-group">
+      <p class="faq-lang">English</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <p class="faq-q">Restore purchases</p>
+          <p class="faq-a">Open the app → You → Premium → Restore purchases.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">iCloud sync</p>
+          <p class="faq-a">iOS Settings → Apple ID → iCloud → LifeScore. iCloud sync is a Premium feature.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Export / Import data</p>
+          <p class="faq-a">You → Account &amp; data → Export or Import.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Reminders</p>
+          <p class="faq-a">You → Settings → Reminders, or iOS Settings → Notifications → LifeScore.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Change language</p>
+          <p class="faq-a">iOS Settings → LifeScore → Language.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Widgets</p>
+          <p class="faq-a">Long-press your home screen → + → LifeScore. Widgets show today's ratings at a glance.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Custom categories</p>
+          <p class="faq-a">You → Categories → Custom. Creating custom categories requires Premium.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What happens if I cancel Premium?</p>
+          <p class="faq-a">You keep all your data. Premium features (iCloud sync, trends, weekly review, drivers &amp; comparisons, CSV export) will be disabled when the subscription ends.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Delete data</p>
+          <p class="faq-a">Delete the app from your device. If iCloud is enabled, manage iCloud data in iOS Settings → Apple ID → iCloud → Manage Storage.</p>
+        </div>
+      </div>
+    </div>
 
-<p><strong>App</strong><br>
-LifeScore — daily self-ratings (1–7), weekly review, insights, goals, reminders and iCloud sync.</p>
+    <div class="faq-group">
+      <p class="faq-lang">Svenska</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <p class="faq-q">Återställ köp</p>
+          <p class="faq-a">Öppna appen → Du → Premium → Återställ köp.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">iCloud-synk</p>
+          <p class="faq-a">iOS-inställningar → Apple-ID → iCloud → LifeScore. iCloud-synk är en premiumfunktion.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Exportera / importera data</p>
+          <p class="faq-a">Du → Konto &amp; data → Exportera eller Importera.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Påminnelser</p>
+          <p class="faq-a">Du → Inställningar → Påminnelser, eller iOS-inställningar → Notiser → LifeScore.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Byta språk</p>
+          <p class="faq-a">iOS-inställningar → LifeScore → Språk.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Widgets</p>
+          <p class="faq-a">Håll in på hemskärmen → + → LifeScore. Widgets visar dagens betyg direkt.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Egna kategorier</p>
+          <p class="faq-a">Du → Kategorier → Egna. Att skapa egna kategorier kräver Premium.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Vad händer om jag avslutar Premium?</p>
+          <p class="faq-a">Du behåller all din data. Premiumfunktioner (iCloud-synk, trender, veckoreview, drivkrafter &amp; jämförelser, CSV-export) inaktiveras när prenumerationen löper ut.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Radera data</p>
+          <p class="faq-a">Ta bort appen från enheten. Om iCloud är aktiverat, hantera iCloud-data i iOS-inställningar → Apple-ID → iCloud → Hantera lagring.</p>
+        </div>
+      </div>
+    </div>
 
-<h3>FAQ (English)</h3>
-<ul>
-  <li><strong>Restore purchases:</strong> Open the app → You → Premium → Restore purchases.</li>
-  <li><strong>iCloud sync:</strong> iOS Settings → Apple ID → iCloud → LifeScore. iCloud sync is a Premium feature.</li>
-  <li><strong>Export / Import data:</strong> You → Account &amp; data → Export or Import.</li>
-  <li><strong>Reminders:</strong> You → Settings → Reminders, or iOS Settings → Notifications → LifeScore.</li>
-  <li><strong>Change language:</strong> iOS Settings → LifeScore → Language.</li>
-  <li><strong>Widgets:</strong> Long-press your home screen → + → LifeScore. Widgets show today's ratings at a glance.</li>
-  <li><strong>Custom categories:</strong> You → Categories → Custom. Creating custom categories requires Premium.</li>
-  <li><strong>What happens if I cancel Premium?</strong> You keep all your data. Premium features (iCloud sync, trends, weekly review, drivers &amp; comparisons, CSV export) will be disabled when the subscription ends.</li>
-  <li><strong>Delete data:</strong> Delete the app from your device. If iCloud is enabled, manage iCloud data in iOS Settings → Apple ID → iCloud → Manage Storage.</li>
-</ul>
-
-<h3>Vanliga frågor (Svenska)</h3>
-<ul>
-  <li><strong>Återställ köp:</strong> Öppna appen → Du → Premium → Återställ köp.</li>
-  <li><strong>iCloud-synk:</strong> iOS-inställningar → Apple-ID → iCloud → LifeScore. iCloud-synk är en premiumfunktion.</li>
-  <li><strong>Exportera/importera data:</strong> Du → Konto &amp; data → Exportera eller Importera.</li>
-  <li><strong>Påminnelser:</strong> Du → Inställningar → Påminnelser, eller iOS-inställningar → Notiser → LifeScore.</li>
-  <li><strong>Byta språk:</strong> iOS-inställningar → LifeScore → Språk.</li>
-  <li><strong>Widgets:</strong> Håll in på hemskärmen → + → LifeScore. Widgets visar dagens betyg direkt.</li>
-  <li><strong>Egna kategorier:</strong> Du → Kategorier → Egna. Att skapa egna kategorier kräver Premium.</li>
-  <li><strong>Vad händer om jag avslutar Premium?</strong> Du behåller all din data. Premiumfunktioner (iCloud-synk, trender, veckoreview, drivkrafter &amp; jämförelser, CSV-export) inaktiveras när prenumerationen löper ut.</li>
-  <li><strong>Radera data:</strong> Ta bort appen från enheten. Om iCloud är aktiverat, hantera iCloud-data i iOS-inställningar → Apple-ID → iCloud → Hantera lagring.</li>
-</ul>
-
-<p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></p>
-<p>Last updated: 2026-03-26</p>
-
-<footer>
-  <a href="index.html">Support</a>
-  <a href="privacy.html">Privacy</a>
-  <a href="terms.html">Terms</a><br>
-  Publisher: VirelloDev
-</footer>
-
+    <footer>
+      <p class="footer-copy">© 2026 Virello Development. Last updated 2026-03-26.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
