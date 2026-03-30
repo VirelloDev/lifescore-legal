@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basky — Integritetspolicy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #1a1a18;
+      --muted: #6b6b66;
+      --hint: #9b9b96;
+      --surface: #ffffff;
+      --bg: #f5f4f0;
+      --border: rgba(0,0,0,0.1);
+      --accent: #1A8F8F;
+      --app-color: #1A8F8F;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #e8e8e4;
+        --muted: #9b9b96;
+        --hint: #6b6b66;
+        --surface: #1e1e1c;
+        --bg: #161614;
+        --border: rgba(255,255,255,0.1);
+        --accent: #2BBFBF;
+        --app-color: #2BBFBF;
+      }
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page { max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 17px;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: #185FA5; }
+
+    .nav-links { display: flex; gap: 20px; }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--app-color); font-weight: 500; }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 2.5rem;
+    }
+
+    .app-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 13px;
+      background: var(--app-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 24px;
+    }
+
+    .app-header-text h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 26px;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+    }
+
+    .app-header-text p {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 300;
+      margin-top: 3px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--hint);
+      margin-bottom: 1rem;
+    }
+
+    .policy-card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+
+    .policy-intro {
+      padding: 1.25rem 1.5rem;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.65;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .policy-section {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .policy-section:last-child { border-bottom: none; }
+
+    .policy-section h3 {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .policy-section p,
+    .policy-section li {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .policy-section p + p { margin-top: 6px; }
+
+    .policy-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .policy-section ul li::before {
+      content: "–";
+      margin-right: 6px;
+      color: var(--hint);
+    }
+
+    .policy-section a {
+      color: var(--app-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .policy-section a:hover { opacity: 0.75; }
+
+    footer {
+      margin-top: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-copy { font-size: 12px; color: var(--hint); }
+    .footer-links { display: flex; gap: 16px; }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--hint);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav>
+      <a href="https://virellodev.com" class="nav-logo">Virello <span>Development</span></a>
+      <div class="nav-links">
+        <a href="index.html">Support</a>
+        <a href="privacy.html" class="active">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </nav>
+
+    <div class="app-header">
+      <div class="app-icon">🛒</div>
+      <div class="app-header-text">
+        <h1>Basky</h1>
+        <p>Integritetspolicy</p>
+      </div>
+    </div>
+
+    <p class="section-label">Svenska</p>
+    <div class="policy-card">
+      <p class="policy-intro">Basky samlar inte in personuppgifter, säljer inte data och skickar inte din information till tredje part. Din inköpsdata stannar på din enhet och, om du aktiverar iCloud-synk, i din privata iCloud-behållare.</p>
+      <div class="policy-section">
+        <h3>Vad vi samlar in</h3>
+        <p>Basky samlar inte in personuppgifter. Appen lagrar följande data lokalt på din enhet:</p>
+        <ul>
+          <li>Dina inköpslistor och varor</li>
+          <li>Sparade recept</li>
+          <li>Listmallar</li>
+          <li>Butiksinställningar och preferenser</li>
+          <li>Köphistorik (för "Köp igen"-funktionen)</li>
+        </ul>
+        <p>Ingen av dessa uppgifter skickas till Virello Development eller någon tredje part.</p>
+      </div>
+      <div class="policy-section">
+        <h3>iCloud-synkronisering</h3>
+        <p>Om du väljer att aktivera iCloud Sync (ett Pro-alternativ) lagras din data i din personliga iCloud-behållare via Apple CloudKit. Virello Development har inte tillgång till data som lagras i din iCloud-behållare. Apples egna integritetspolicy gäller för iCloud-lagring: <a href="https://www.apple.com/legal/privacy/sv/">apple.com/legal/privacy</a>.</p>
+      </div>
+      <div class="policy-section">
+        <h3>Annonsering</h3>
+        <p>Den kostnadsfria versionen av Basky visar annonser via Google AdMob. AdMob kan använda en begränsad mängd enhetsdata för att visa relevanta annonser i enlighet med Apples App Tracking Transparency-ramverk. Du kommer att tillfrågas om tillåtelse innan sådan spårning sker. Om du tackar nej visas kontextuella annonser utan spårning. Pro-användare ser inga annonser.</p>
+        <p>Googles integritetspolicy: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
+      </div>
+      <div class="policy-section">
+        <h3>In-app-köp</h3>
+        <p>Basky erbjuder ett engångsköp av Pro-versionen via Apple App Store. All betalningshantering sköts av Apple. Virello Development ser inte och lagrar inte betalningsinformation.</p>
+      </div>
+      <div class="policy-section">
+        <h3>Barn</h3>
+        <p>Basky är avsedd för allmän publik och riktar sig inte specifikt till barn under 13 år. Vi samlar medvetet inte in information från barn.</p>
+      </div>
+      <div class="policy-section">
+        <h3>Ändringar i denna policy</h3>
+        <p>Om vi gör väsentliga ändringar i denna integritetspolicy uppdateras datumet längst upp på sidan. Vi rekommenderar att du kontrollerar sidan vid tillfälle.</p>
+      </div>
+      <div class="policy-section">
+        <h3>Kontakt</h3>
+        <p>Frågor om integritet? Hör av dig till: <a href="mailto:support@virellodev.com">support@virellodev.com</a></p>
+      </div>
+    </div>
+
+    <footer>
+      <p class="footer-copy">© 2026 Virello Development. Senast uppdaterad mars 2026.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
