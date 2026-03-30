@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basky — Användarvillkor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #1a1a18;
+      --muted: #6b6b66;
+      --hint: #9b9b96;
+      --surface: #ffffff;
+      --bg: #f5f4f0;
+      --border: rgba(0,0,0,0.1);
+      --accent: #1A8F8F;
+      --app-color: #1A8F8F;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #e8e8e4;
+        --muted: #9b9b96;
+        --hint: #6b6b66;
+        --surface: #1e1e1c;
+        --bg: #161614;
+        --border: rgba(255,255,255,0.1);
+        --accent: #2BBFBF;
+        --app-color: #2BBFBF;
+      }
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page { max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 17px;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: #185FA5; }
+
+    .nav-links { display: flex; gap: 20px; }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--app-color); font-weight: 500; }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 2.5rem;
+    }
+
+    .app-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 13px;
+      background: var(--app-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 24px;
+    }
+
+    .app-header-text h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 26px;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+    }
+
+    .app-header-text p {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 300;
+      margin-top: 3px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--hint);
+      margin-bottom: 1rem;
+    }
+
+    .terms-card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+
+    .terms-intro {
+      padding: 1.25rem 1.5rem;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.65;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .terms-section {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .terms-section:last-child { border-bottom: none; }
+
+    .terms-section h3 {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .terms-section p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .terms-section p + p { margin-top: 6px; }
+
+    .terms-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 6px;
+    }
+
+    .terms-section ul li {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .terms-section ul li::before {
+      content: "–";
+      margin-right: 6px;
+      color: var(--hint);
+    }
+
+    .terms-section a {
+      color: var(--app-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .terms-section a:hover { opacity: 0.75; }
+
+    footer {
+      margin-top: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-copy { font-size: 12px; color: var(--hint); }
+    .footer-links { display: flex; gap: 16px; }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--hint);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav>
+      <a href="https://virellodev.com" class="nav-logo">Virello <span>Development</span></a>
+      <div class="nav-links">
+        <a href="index.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html" class="active">Terms</a>
+      </div>
+    </nav>
+
+    <div class="app-header">
+      <div class="app-icon">🛒</div>
+      <div class="app-header-text">
+        <h1>Basky</h1>
+        <p>Användarvillkor</p>
+      </div>
+    </div>
+
+    <p class="section-label">Svenska</p>
+    <div class="terms-card">
+      <p class="terms-intro">Genom att ladda ned eller använda Basky godkänner du dessa användarvillkor. Om du inte godkänner villkoren ska du inte använda appen.</p>
+      <div class="terms-section">
+        <h3>Om appen</h3>
+        <p>Basky är en inköpslisteapp utvecklad av Virello Development (Anton Faberling). Appen finns tillgänglig för iPhone via Apple App Store. Basky erbjuds i en kostnadsfri version med annonser och en Pro-version utan annonser med utökade funktioner.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Pro — engångsköp</h3>
+        <p>Basky Pro är ett engångsköp som ger tillgång till:</p>
+        <ul>
+          <li>iCloud-synkronisering mellan enheter</li>
+          <li>Delning av listor och recept med andra</li>
+          <li>Import av recept från webblänkar</li>
+          <li>Export och backup av din data</li>
+          <li>Budgetspårning</li>
+          <li>Annonsfrihet</li>
+        </ul>
+        <p>Köpet är permanent och kopplat till ditt Apple ID. Du kan återställa köpet utan kostnad på ny enhet via "Återställ köp" i appen. Betalning hanteras av Apple och debiteras ditt Apple ID-konto vid bekräftat köp. Inga återkommande avgifter tillkommer.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Din data</h3>
+        <p>All data du skapar i Basky — listor, recept, mallar och inställningar — tillhör dig. Data lagras lokalt på din enhet. Om du aktiverar iCloud Sync lagras data även i din personliga iCloud-behållare. Virello Development har inte tillgång till din data.</p>
+        <p>Om du avinstallerar appen raderas lokal data. iCloud-data hanteras via dina iCloud-inställningar.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Annonsering</h3>
+        <p>Den kostnadsfria versionen innehåller annonser via Google AdMob. Annonser visas inte för Pro-användare. Annonsrelaterad spårning kräver ditt uttryckliga samtycke via Apples App Tracking Transparency-ramverk.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Tillåten användning</h3>
+        <p>Du får inte:</p>
+        <ul>
+          <li>Kopiera, modifiera eller distribuera appen eller dess innehåll</li>
+          <li>Försöka extrahera appens källkod eller dekompilera den</li>
+          <li>Använda appen för olagliga ändamål</li>
+          <li>Försöka kringgå appens betalningsfunktioner</li>
+        </ul>
+      </div>
+      <div class="terms-section">
+        <h3>Ansvarsbegränsning</h3>
+        <p>Basky tillhandahålls "i befintligt skick". Virello Development lämnar inga garantier för att appen alltid är tillgänglig, felfri eller lämpar sig för ett specifikt ändamål. Vi ansvarar inte för förlust av data eller skador som uppstår till följd av appens användning.</p>
+        <p>I den mån det är tillåtet enligt tillämplig lag begränsas Virello Developments ansvar till det belopp du betalat för Pro, om något.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Immateriella rättigheter</h3>
+        <p>Appen, dess design, logotyp och kod är Virello Developments egendom och skyddas av upphovsrätt. Dessa villkor ger dig en begränsad, icke-exklusiv licens att använda appen för personligt, icke-kommersiellt bruk.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Ändringar av appen och villkoren</h3>
+        <p>Vi förbehåller oss rätten att uppdatera appen och dessa villkor när som helst. Väsentliga ändringar kommuniceras via uppdatering av datumet överst på denna sida. Fortsatt användning av appen efter ändringar innebär att du godkänner de nya villkoren.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Tillämplig lag</h3>
+        <p>Dessa villkor regleras av svensk lag. Eventuella tvister ska i första hand lösas genom dialog. I andra hand gäller svenska domstolar.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Kontakt</h3>
+        <p>Frågor om villkoren? Hör av dig: <a href="mailto:support@virellodev.com">support@virellodev.com</a></p>
+      </div>
+    </div>
+
+    <footer>
+      <p class="footer-copy">© 2026 Virello Development. Senast uppdaterad mars 2026.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
