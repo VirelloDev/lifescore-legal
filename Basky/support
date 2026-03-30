@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basky — Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #1a1a18;
+      --muted: #6b6b66;
+      --hint: #9b9b96;
+      --surface: #ffffff;
+      --bg: #f5f4f0;
+      --border: rgba(0,0,0,0.1);
+      --accent: #1A8F8F;
+      --app-color: #1A8F8F;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #e8e8e4;
+        --muted: #9b9b96;
+        --hint: #6b6b66;
+        --surface: #1e1e1c;
+        --bg: #161614;
+        --border: rgba(255,255,255,0.1);
+        --accent: #2BBFBF;
+        --app-color: #2BBFBF;
+      }
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page { max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 17px;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: #185FA5; }
+
+    .nav-links { display: flex; gap: 20px; }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--app-color); font-weight: 500; }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 2.5rem;
+    }
+
+    .app-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 13px;
+      background: var(--app-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 24px;
+    }
+
+    .app-header-text h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 26px;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+    }
+
+    .app-header-text p {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 300;
+      margin-top: 3px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--hint);
+      margin-bottom: 1rem;
+    }
+
+    .contact-block {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-block p { font-size: 14px; color: var(--muted); font-weight: 300; }
+
+    .contact-block a {
+      font-size: 14px;
+      color: var(--app-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-block a:hover { opacity: 0.75; }
+
+    .faq-list {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-item {
+      padding: 1rem 1.25rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-q {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .faq-a {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    footer {
+      margin-top: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-copy { font-size: 12px; color: var(--hint); }
+    .footer-links { display: flex; gap: 16px; }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--hint);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav>
+      <a href="https://virellodev.com" class="nav-logo">Virello <span>Development</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </nav>
+
+    <div class="app-header">
+      <div class="app-icon">🛒</div>
+      <div class="app-header-text">
+        <h1>Basky</h1>
+        <p>Smarta inköpslistor</p>
+      </div>
+    </div>
+
+    <p class="section-label">Kontakt</p>
+    <div class="contact-block">
+      <p>Hittar du inte svaret nedan? Hör av dig så svarar vi inom 1–2 arbetsdagar.</p>
+      <a href="mailto:support@virellodev.com">support@virellodev.com</a>
+    </div>
+
+    <p class="section-label">Vanliga frågor</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="faq-q">Hur köper jag Basky Pro?</p>
+        <p class="faq-a">Öppna Inställningar i appen och tryck på "Basky Pro". Där hittar du köpknappen med aktuellt pris. Köpet är ett engångsköp — inga återkommande avgifter.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Jag har köpt Pro men det syns inte i appen</p>
+        <p class="faq-a">Gå till Inställningar → Basky Pro → "Återställ köp". Om problemet kvarstår, starta om appen och försök igen. Kontakta oss om det fortfarande inte fungerar.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Hur aktiverar jag iCloud-synk?</p>
+        <p class="faq-a">iCloud Sync ingår i Pro. Gå till Inställningar → aktivera "iCloud Sync". Appen behöver startas om för att synken ska aktiveras. Se till att du är inloggad på iCloud på enheten.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Hur delar jag en lista med någon?</p>
+        <p class="faq-a">Öppna listan, tryck på dela-ikonen (person med +) uppe till höger. Mottagaren behöver ha Basky installerat och ett Apple ID med iCloud aktiverat. Delning kräver Pro.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Hur importerar jag ett recept från en webbsida?</p>
+        <p class="faq-a">Gå till Recept-fliken, tryck på länkikonen uppe till höger och klistra in webbadressen. Basky försöker automatiskt hämta ingredienser och portioner från sidan. Fungerar bäst med recept som har strukturerad data (schema.org). Kräver Pro.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Vad är "Butiksläge"?</p>
+        <p class="faq-a">Butiksläge är ett fokuserat handlingsläge — ikryssade varor försvinner automatiskt, skärmen scrollar till nästa vara och haptisk feedback bekräftar varje avprickning. Aktivera det via menyn (···) inne i en lista.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Kan jag återställa raderad data?</p>
+        <p class="faq-a">Raderade listor och varor kan inte återställas direkt. Om du har Pro och iCloud Sync aktiverat finns en viss möjlighet att data kan återhämtas via iCloud — kontakta oss så hjälper vi dig undersöka det.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Hur tar jag bort en anpassad vara ur katalogen?</p>
+        <p class="faq-a">Gå till Inställningar → Egna varor. Swipa åt vänster på varan och tryck Radera.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Appen kraschar eller beter sig konstigt</p>
+        <p class="faq-a">Prova att stänga och öppna appen igen. Om problemet kvarstår, avinstallera och installera om (din data i iCloud bevaras om du har Pro + Sync aktiverat). Beskriv gärna vad du gjorde när det hände och skicka ett mail till oss.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Fungerar Basky offline?</p>
+        <p class="faq-a">Ja. Alla grundfunktioner fungerar utan internetanslutning. iCloud-synkronisering och receptimport kräver uppkoppling.</p>
+      </div>
+    </div>
+
+    <footer>
+      <p class="footer-copy">© 2026 Virello Development. Senast uppdaterad mars 2026.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
