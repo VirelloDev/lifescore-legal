@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LifeScore — Terms of Use</title>
+  <title>Basky — Användarvillkor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -17,9 +17,8 @@
       --surface: #ffffff;
       --bg: #f5f4f0;
       --border: rgba(0,0,0,0.1);
-      --border-mid: rgba(0,0,0,0.18);
-      --accent: #185FA5;
-      --app-color: #185FA5;
+      --accent: #1A8F8F;
+      --app-color: #1A8F8F;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -30,9 +29,8 @@
         --surface: #1e1e1c;
         --bg: #161614;
         --border: rgba(255,255,255,0.1);
-        --border-mid: rgba(255,255,255,0.18);
-        --accent: #5BA3E0;
-        --app-color: #5BA3E0;
+        --accent: #2BBFBF;
+        --app-color: #2BBFBF;
       }
     }
 
@@ -44,11 +42,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .page {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 5rem;
-    }
+    .page { max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
 
     nav {
       display: flex;
@@ -67,7 +61,7 @@
       text-decoration: none;
     }
 
-    .nav-logo span { color: var(--accent); }
+    .nav-logo span { color: #185FA5; }
 
     .nav-links { display: flex; gap: 20px; }
 
@@ -97,9 +91,8 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      font-size: 24px;
     }
-
-    .app-icon svg { width: 24px; height: 24px; }
 
     .app-header-text h1 {
       font-family: 'DM Serif Display', Georgia, serif;
@@ -124,13 +117,12 @@
       margin-bottom: 1rem;
     }
 
-    .lang-block { margin-bottom: 2.5rem; }
-
     .terms-card {
       background: var(--surface);
       border: 0.5px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
+      margin-bottom: 2.5rem;
     }
 
     .terms-intro {
@@ -162,6 +154,29 @@
       font-weight: 300;
     }
 
+    .terms-section p + p { margin-top: 6px; }
+
+    .terms-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 6px;
+    }
+
+    .terms-section ul li {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .terms-section ul li::before {
+      content: "–";
+      margin-right: 6px;
+      color: var(--hint);
+    }
+
     .terms-section a {
       color: var(--app-color);
       text-decoration: none;
@@ -169,8 +184,6 @@
     }
 
     .terms-section a:hover { opacity: 0.75; }
-
-    hr { border: none; border-top: 0.5px solid var(--border); margin: 2.5rem 0; }
 
     footer {
       margin-top: 4rem;
@@ -182,7 +195,6 @@
     }
 
     .footer-copy { font-size: 12px; color: var(--hint); }
-
     .footer-links { display: flex; gap: 16px; }
 
     .footer-links a {
@@ -207,86 +219,77 @@
     </nav>
 
     <div class="app-header">
-      <div class="app-icon">
-        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
-          <rect x="11" y="3" width="6" height="6" rx="1.5" fill="white" opacity="0.55"/>
-          <rect x="3" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.55"/>
-          <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
-        </svg>
-      </div>
+      <div class="app-icon">🛒</div>
       <div class="app-header-text">
-        <h1>LifeScore</h1>
-        <p>Terms of Use</p>
+        <h1>Basky</h1>
+        <p>Användarvillkor</p>
       </div>
     </div>
-
-    <p class="section-label">English</p>
-    <div class="lang-block">
-      <div class="terms-card">
-        <p class="terms-intro">By downloading or using LifeScore, you agree to these terms.</p>
-        <div class="terms-section">
-          <h3>Use of the app</h3>
-          <p>LifeScore is provided for personal, non-commercial use. You may not reverse engineer, modify, or redistribute the app.</p>
-        </div>
-        <div class="terms-section">
-          <h3>Premium subscriptions</h3>
-          <p>LifeScore offers monthly and yearly auto-renewable subscriptions managed through Apple's App Store. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. You can manage or cancel your subscription in your Apple ID settings. If you cancel, you keep your data but Premium features will be disabled when the subscription period ends.</p>
-        </div>
-        <div class="terms-section">
-          <h3>No warranty</h3>
-          <p>LifeScore is provided as-is. The app is not a medical device and is not intended to diagnose, treat, or prevent any health condition. Ratings and insights are for personal tracking and informational purposes only.</p>
-        </div>
-        <div class="terms-section">
-          <h3>Limitation of liability</h3>
-          <p>Virello Development is not liable for any loss of data or damages arising from use of the app.</p>
-        </div>
-        <div class="terms-section">
-          <h3>Changes</h3>
-          <p>These terms may be updated. Continued use of the app after changes constitutes acceptance.</p>
-        </div>
-        <div class="terms-section">
-          <h3>Contact</h3>
-          <p><a href="mailto:a.faberling@virellodev.com">a.faberling@virellodev.com</a></p>
-        </div>
-      </div>
-    </div>
-
-    <hr>
 
     <p class="section-label">Svenska</p>
-    <div class="lang-block">
-      <div class="terms-card">
-        <p class="terms-intro">Genom att ladda ned eller använda LifeScore godkänner du dessa villkor.</p>
-        <div class="terms-section">
-          <h3>Användning av appen</h3>
-          <p>LifeScore är avsedd för personligt, icke-kommersiellt bruk. Du får inte bakåtkompilera, modifiera eller vidaredistribuera appen.</p>
-        </div>
-        <div class="terms-section">
-          <h3>Premiumprenumerationer</h3>
-          <p>LifeScore erbjuder månads- och årsbaserade automatiskt förnyande prenumerationer via Apples App Store. Prenumerationer förnyas automatiskt om de inte avbryts minst 24 timmar innan den aktuella perioden löper ut. Du kan hantera eller avbryta din prenumeration i dina Apple ID-inställningar. Om du avslutar behåller du all din data men premiumfunktioner inaktiveras när prenumerationsperioden löper ut.</p>
-        </div>
-        <div class="terms-section">
-          <h3>Ingen garanti</h3>
-          <p>LifeScore tillhandahålls i befintligt skick. Appen är inte en medicinsk produkt och är inte avsedd att diagnostisera, behandla eller förebygga något hälsotillstånd. Betyg och insikter är enbart för personlig uppföljning och informationsändamål.</p>
-        </div>
-        <div class="terms-section">
-          <h3>Ansvarsbegränsning</h3>
-          <p>Virello Development ansvarar inte för dataförlust eller skador som uppstår vid användning av appen.</p>
-        </div>
-        <div class="terms-section">
-          <h3>Ändringar</h3>
-          <p>Dessa villkor kan uppdateras. Fortsatt användning av appen efter ändringar innebär att du godkänner de nya villkoren.</p>
-        </div>
-        <div class="terms-section">
-          <h3>Kontakt</h3>
-          <p><a href="mailto:a.faberling@virellodev.com">a.faberling@virellodev.com</a></p>
-        </div>
+    <div class="terms-card">
+      <p class="terms-intro">Genom att ladda ned eller använda Basky godkänner du dessa användarvillkor. Om du inte godkänner villkoren ska du inte använda appen.</p>
+      <div class="terms-section">
+        <h3>Om appen</h3>
+        <p>Basky är en inköpslisteapp utvecklad av Virello Development (Anton Faberling). Appen finns tillgänglig för iPhone via Apple App Store. Basky erbjuds i en kostnadsfri version med annonser och en Pro-version utan annonser med utökade funktioner.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Pro — engångsköp</h3>
+        <p>Basky Pro är ett engångsköp som ger tillgång till:</p>
+        <ul>
+          <li>iCloud-synkronisering mellan enheter</li>
+          <li>Delning av listor och recept med andra</li>
+          <li>Import av recept från webblänkar</li>
+          <li>Export och backup av din data</li>
+          <li>Budgetspårning</li>
+          <li>Annonsfrihet</li>
+        </ul>
+        <p>Köpet är permanent och kopplat till ditt Apple ID. Du kan återställa köpet utan kostnad på ny enhet via "Återställ köp" i appen. Betalning hanteras av Apple och debiteras ditt Apple ID-konto vid bekräftat köp. Inga återkommande avgifter tillkommer.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Din data</h3>
+        <p>All data du skapar i Basky — listor, recept, mallar och inställningar — tillhör dig. Data lagras lokalt på din enhet. Om du aktiverar iCloud Sync lagras data även i din personliga iCloud-behållare. Virello Development har inte tillgång till din data.</p>
+        <p>Om du avinstallerar appen raderas lokal data. iCloud-data hanteras via dina iCloud-inställningar.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Annonsering</h3>
+        <p>Den kostnadsfria versionen innehåller annonser via Google AdMob. Annonser visas inte för Pro-användare. Annonsrelaterad spårning kräver ditt uttryckliga samtycke via Apples App Tracking Transparency-ramverk.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Tillåten användning</h3>
+        <p>Du får inte:</p>
+        <ul>
+          <li>Kopiera, modifiera eller distribuera appen eller dess innehåll</li>
+          <li>Försöka extrahera appens källkod eller dekompilera den</li>
+          <li>Använda appen för olagliga ändamål</li>
+          <li>Försöka kringgå appens betalningsfunktioner</li>
+        </ul>
+      </div>
+      <div class="terms-section">
+        <h3>Ansvarsbegränsning</h3>
+        <p>Basky tillhandahålls "i befintligt skick". Virello Development lämnar inga garantier för att appen alltid är tillgänglig, felfri eller lämpar sig för ett specifikt ändamål. Vi ansvarar inte för förlust av data eller skador som uppstår till följd av appens användning.</p>
+        <p>I den mån det är tillåtet enligt tillämplig lag begränsas Virello Developments ansvar till det belopp du betalat för Pro, om något.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Immateriella rättigheter</h3>
+        <p>Appen, dess design, logotyp och kod är Virello Developments egendom och skyddas av upphovsrätt. Dessa villkor ger dig en begränsad, icke-exklusiv licens att använda appen för personligt, icke-kommersiellt bruk.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Ändringar av appen och villkoren</h3>
+        <p>Vi förbehåller oss rätten att uppdatera appen och dessa villkor när som helst. Väsentliga ändringar kommuniceras via uppdatering av datumet överst på denna sida. Fortsatt användning av appen efter ändringar innebär att du godkänner de nya villkoren.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Tillämplig lag</h3>
+        <p>Dessa villkor regleras av svensk lag. Eventuella tvister ska i första hand lösas genom dialog. I andra hand gäller svenska domstolar.</p>
+      </div>
+      <div class="terms-section">
+        <h3>Kontakt</h3>
+        <p>Frågor om villkoren? Hör av dig: <a href="mailto:support@virellodev.com">support@virellodev.com</a></p>
       </div>
     </div>
 
     <footer>
-      <p class="footer-copy">© 2026 Virello Development. Last updated 2026-03-26.</p>
+      <p class="footer-copy">© 2026 Virello Development. Senast uppdaterad mars 2026.</p>
       <div class="footer-links">
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>

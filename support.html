@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basky — Integritetspolicy</title>
+  <title>Basky — Support</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -117,7 +117,29 @@
       margin-bottom: 1rem;
     }
 
-    .policy-card {
+    .contact-block {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-block p { font-size: 14px; color: var(--muted); font-weight: 300; }
+
+    .contact-block a {
+      font-size: 14px;
+      color: var(--app-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-block a:hover { opacity: 0.75; }
+
+    .faq-list {
       background: var(--surface);
       border: 0.5px solid var(--border);
       border-radius: 12px;
@@ -125,58 +147,25 @@
       margin-bottom: 2.5rem;
     }
 
-    .policy-intro {
-      padding: 1.25rem 1.5rem;
+    .faq-item {
+      padding: 1rem 1.25rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-q {
       font-size: 14px;
-      color: var(--muted);
-      font-weight: 300;
-      line-height: 1.65;
-      border-bottom: 0.5px solid var(--border);
-    }
-
-    .policy-section {
-      padding: 1.25rem 1.5rem;
-      border-bottom: 0.5px solid var(--border);
-    }
-
-    .policy-section:last-child { border-bottom: none; }
-
-    .policy-section h3 {
-      font-size: 13px;
       font-weight: 500;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
 
-    .policy-section p,
-    .policy-section li {
+    .faq-a {
       font-size: 13px;
       color: var(--muted);
-      line-height: 1.65;
+      line-height: 1.6;
       font-weight: 300;
     }
-
-    .policy-section p + p { margin-top: 6px; }
-
-    .policy-section ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .policy-section ul li::before {
-      content: "–";
-      margin-right: 6px;
-      color: var(--hint);
-    }
-
-    .policy-section a {
-      color: var(--app-color);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .policy-section a:hover { opacity: 0.75; }
 
     footer {
       margin-top: 4rem;
@@ -205,8 +194,8 @@
     <nav>
       <a href="https://virellodev.com" class="nav-logo">Virello <span>Development</span></a>
       <div class="nav-links">
-        <a href="index.html">Support</a>
-        <a href="privacy.html" class="active">Privacy</a>
+        <a href="index.html" class="active">Support</a>
+        <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
       </div>
     </nav>
@@ -215,49 +204,57 @@
       <div class="app-icon">🛒</div>
       <div class="app-header-text">
         <h1>Basky</h1>
-        <p>Integritetspolicy</p>
+        <p>Smarta inköpslistor</p>
       </div>
     </div>
 
-    <p class="section-label">Svenska</p>
-    <div class="policy-card">
-      <p class="policy-intro">Basky samlar inte in personuppgifter, säljer inte data och skickar inte din information till tredje part. Din inköpsdata stannar på din enhet och, om du aktiverar iCloud-synk, i din privata iCloud-behållare.</p>
-      <div class="policy-section">
-        <h3>Vad vi samlar in</h3>
-        <p>Basky samlar inte in personuppgifter. Appen lagrar följande data lokalt på din enhet:</p>
-        <ul>
-          <li>Dina inköpslistor och varor</li>
-          <li>Sparade recept</li>
-          <li>Listmallar</li>
-          <li>Butiksinställningar och preferenser</li>
-          <li>Köphistorik (för "Köp igen"-funktionen)</li>
-        </ul>
-        <p>Ingen av dessa uppgifter skickas till Virello Development eller någon tredje part.</p>
+    <p class="section-label">Kontakt</p>
+    <div class="contact-block">
+      <p>Hittar du inte svaret nedan? Hör av dig så svarar vi inom 1–2 arbetsdagar.</p>
+      <a href="mailto:support@virellodev.com">support@virellodev.com</a>
+    </div>
+
+    <p class="section-label">Vanliga frågor</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="faq-q">Hur köper jag Basky Pro?</p>
+        <p class="faq-a">Öppna Inställningar i appen och tryck på "Basky Pro". Där hittar du köpknappen med aktuellt pris. Köpet är ett engångsköp — inga återkommande avgifter.</p>
       </div>
-      <div class="policy-section">
-        <h3>iCloud-synkronisering</h3>
-        <p>Om du väljer att aktivera iCloud Sync (ett Pro-alternativ) lagras din data i din personliga iCloud-behållare via Apple CloudKit. Virello Development har inte tillgång till data som lagras i din iCloud-behållare. Apples egna integritetspolicy gäller för iCloud-lagring: <a href="https://www.apple.com/legal/privacy/sv/">apple.com/legal/privacy</a>.</p>
+      <div class="faq-item">
+        <p class="faq-q">Jag har köpt Pro men det syns inte i appen</p>
+        <p class="faq-a">Gå till Inställningar → Basky Pro → "Återställ köp". Om problemet kvarstår, starta om appen och försök igen. Kontakta oss om det fortfarande inte fungerar.</p>
       </div>
-      <div class="policy-section">
-        <h3>Annonsering</h3>
-        <p>Den kostnadsfria versionen av Basky visar annonser via Google AdMob. AdMob kan använda en begränsad mängd enhetsdata för att visa relevanta annonser i enlighet med Apples App Tracking Transparency-ramverk. Du kommer att tillfrågas om tillåtelse innan sådan spårning sker. Om du tackar nej visas kontextuella annonser utan spårning. Pro-användare ser inga annonser.</p>
-        <p>Googles integritetspolicy: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
+      <div class="faq-item">
+        <p class="faq-q">Hur aktiverar jag iCloud-synk?</p>
+        <p class="faq-a">iCloud Sync ingår i Pro. Gå till Inställningar → aktivera "iCloud Sync". Appen behöver startas om för att synken ska aktiveras. Se till att du är inloggad på iCloud på enheten.</p>
       </div>
-      <div class="policy-section">
-        <h3>In-app-köp</h3>
-        <p>Basky erbjuder ett engångsköp av Pro-versionen via Apple App Store. All betalningshantering sköts av Apple. Virello Development ser inte och lagrar inte betalningsinformation.</p>
+      <div class="faq-item">
+        <p class="faq-q">Hur delar jag en lista med någon?</p>
+        <p class="faq-a">Öppna listan, tryck på dela-ikonen (person med +) uppe till höger. Mottagaren behöver ha Basky installerat och ett Apple ID med iCloud aktiverat. Delning kräver Pro.</p>
       </div>
-      <div class="policy-section">
-        <h3>Barn</h3>
-        <p>Basky är avsedd för allmän publik och riktar sig inte specifikt till barn under 13 år. Vi samlar medvetet inte in information från barn.</p>
+      <div class="faq-item">
+        <p class="faq-q">Hur importerar jag ett recept från en webbsida?</p>
+        <p class="faq-a">Gå till Recept-fliken, tryck på länkikonen uppe till höger och klistra in webbadressen. Basky försöker automatiskt hämta ingredienser och portioner från sidan. Fungerar bäst med recept som har strukturerad data (schema.org). Kräver Pro.</p>
       </div>
-      <div class="policy-section">
-        <h3>Ändringar i denna policy</h3>
-        <p>Om vi gör väsentliga ändringar i denna integritetspolicy uppdateras datumet längst upp på sidan. Vi rekommenderar att du kontrollerar sidan vid tillfälle.</p>
+      <div class="faq-item">
+        <p class="faq-q">Vad är "Butiksläge"?</p>
+        <p class="faq-a">Butiksläge är ett fokuserat handlingsläge — ikryssade varor försvinner automatiskt, skärmen scrollar till nästa vara och haptisk feedback bekräftar varje avprickning. Aktivera det via menyn (···) inne i en lista.</p>
       </div>
-      <div class="policy-section">
-        <h3>Kontakt</h3>
-        <p>Frågor om integritet? Hör av dig till: <a href="mailto:support@virellodev.com">support@virellodev.com</a></p>
+      <div class="faq-item">
+        <p class="faq-q">Kan jag återställa raderad data?</p>
+        <p class="faq-a">Raderade listor och varor kan inte återställas direkt. Om du har Pro och iCloud Sync aktiverat finns en viss möjlighet att data kan återhämtas via iCloud — kontakta oss så hjälper vi dig undersöka det.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Hur tar jag bort en anpassad vara ur katalogen?</p>
+        <p class="faq-a">Gå till Inställningar → Egna varor. Swipa åt vänster på varan och tryck Radera.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Appen kraschar eller beter sig konstigt</p>
+        <p class="faq-a">Prova att stänga och öppna appen igen. Om problemet kvarstår, avinstallera och installera om (din data i iCloud bevaras om du har Pro + Sync aktiverat). Beskriv gärna vad du gjorde när det hände och skicka ett mail till oss.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Fungerar Basky offline?</p>
+        <p class="faq-a">Ja. Alla grundfunktioner fungerar utan internetanslutning. iCloud-synkronisering och receptimport kräver uppkoppling.</p>
       </div>
     </div>
 
