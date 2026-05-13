@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Track Your Daily Life Without Overcomplicating It — LifeScore</title>
+  <meta name="description" content="Most habit trackers are too complicated to stick with. Here's a simpler approach to daily tracking that actually tells you something useful.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #1a1a18;
+      --muted: #6b6b66;
+      --hint: #9b9b96;
+      --surface: #ffffff;
+      --bg: #f5f4f0;
+      --border: rgba(0,0,0,0.1);
+      --accent: #185FA5;
+      --app-color: #185FA5;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #e8e8e4;
+        --muted: #9b9b96;
+        --hint: #6b6b66;
+        --surface: #1e1e1c;
+        --bg: #161614;
+        --border: rgba(255,255,255,0.1);
+        --accent: #5BA3E0;
+        --app-color: #5BA3E0;
+      }
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page { max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 17px;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: #185FA5; }
+
+    .nav-links { display: flex; gap: 20px; }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--app-color); font-weight: 500; }
+
+    .breadcrumb {
+      font-size: 13px;
+      color: var(--hint);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover { color: var(--text); }
+
+    .article-header { margin-bottom: 2.5rem; }
+
+    .article-tag {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--app-color);
+      margin-bottom: 0.75rem;
+    }
+
+    .article-header h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.15;
+      letter-spacing: -0.3px;
+      margin-bottom: 1rem;
+    }
+
+    .article-header .lead {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .article-body {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .article-body p { margin-bottom: 1.25rem; font-weight: 300; }
+
+    .article-body h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 20px;
+      letter-spacing: -0.2px;
+      margin-top: 2.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    hr { border: none; border-top: 0.5px solid var(--border); margin: 2.5rem 0; }
+
+    .cta-block {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cta-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 11px;
+      background: var(--app-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cta-icon svg { width: 20px; height: 20px; }
+
+    .cta-text { flex: 1; }
+
+    .cta-text p {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 300;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--surface);
+      background: var(--text);
+      border-radius: 6px;
+      padding: 5px 11px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .cta-btn:hover { opacity: 0.75; }
+
+    .more-articles { margin-top: 3rem; }
+
+    .more-articles p {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--hint);
+      margin-bottom: 1rem;
+    }
+
+    .more-list {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .more-item {
+      display: block;
+      padding: 1rem 1.25rem;
+      text-decoration: none;
+      color: var(--text);
+      border-bottom: 0.5px solid var(--border);
+      font-size: 14px;
+      font-weight: 400;
+      transition: background 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .more-item:last-child { border-bottom: none; }
+    .more-item:hover { background: var(--bg); }
+    .more-item span { color: var(--hint); font-size: 16px; }
+
+    footer {
+      margin-top: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-copy { font-size: 12px; color: var(--hint); }
+    .footer-links { display: flex; gap: 16px; }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--hint);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav>
+      <a href="https://virellodev.com" class="nav-logo">Virello <span>Development</span></a>
+      <div class="nav-links">
+        <a href="../index.html">Support</a>
+        <a href="index.html" class="active">Guides</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+    </nav>
+
+    <div class="breadcrumb">
+      <a href="../index.html">LifeScore</a>
+      <span>›</span>
+      <a href="index.html">Guides</a>
+    </div>
+
+    <div class="article-header">
+      <p class="article-tag">LifeScore</p>
+      <h1>How to Track Your Daily Life Without Overcomplicating It</h1>
+      <p class="lead">Most habit trackers are too complicated to stick with. Here's a simpler approach to daily tracking that actually tells you something useful.</p>
+    </div>
+
+    <div class="article-body">
+      <p>Most people who try to track their habits quit within two weeks. Not because they lack discipline. Because the system is too complicated. Too many habits to log, too many metrics to fill in, too much friction between opening the app and getting anything useful out of it.</p>
+
+      <p>There's a simpler way.</p>
+
+      <h2>The problem with complex habit trackers</h2>
+      <p>Traditional habit trackers ask you to log specific behaviours — did you exercise today, did you drink enough water, did you meditate. This works for some people. For most, it becomes a chore that stops feeling meaningful almost immediately.</p>
+
+      <p>The deeper problem is that tracking behaviours doesn't always tell you how you're actually doing. You can hit every habit on your list and still feel exhausted and unfocused by Thursday.</p>
+
+      <h2>A different approach: rating your day</h2>
+      <p>Instead of tracking specific behaviours, LifeScore asks you to rate six areas of your life on a scale of one to seven — exercise, sleep, focus, stress, nutrition and recovery. It takes about thirty seconds.</p>
+
+      <p>The rating is based on how you actually feel, not whether you completed a specific task. This makes it easier to be honest and easier to stick with over time.</p>
+
+      <h2>What patterns emerge over time</h2>
+      <p>After a few weeks of daily ratings, LifeScore identifies patterns you wouldn't notice day to day. You might discover that your focus scores are consistently lower on Wednesdays, or that your stress levels spike every time your sleep score drops below four.</p>
+
+      <p>These patterns are more useful than a streak counter. They tell you something real about how different areas of your life affect each other.</p>
+
+      <h2>Thirty seconds a day</h2>
+      <p>The daily check-in in LifeScore takes about thirty seconds. There's no long questionnaire, no habit list to work through, no pressure to be perfect.</p>
+
+      <p>Just six ratings, once a day, and a clearer picture of how you're actually doing over time.</p>
+    </div>
+
+    <hr>
+
+    <div class="cta-block">
+      <div class="cta-icon">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+          <rect x="11" y="3" width="6" height="6" rx="1.5" fill="white" opacity="0.55"/>
+          <rect x="3" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.55"/>
+          <rect x="11" y="11" width="6" height="6" rx="1.5" fill="white" opacity="0.9"/>
+        </svg>
+      </div>
+      <div class="cta-text">
+        <p>LifeScore is free to download on the App Store.</p>
+        <a href="https://apps.apple.com/app/id6756915103" class="cta-btn" target="_blank">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download on the App Store
+        </a>
+      </div>
+    </div>
+
+    <div class="more-articles">
+      <p>More guides</p>
+      <div class="more-list">
+        <a href="sleep-focus-stress.html" class="more-item">
+          How to Find the Patterns Between Your Sleep, Focus and Stress
+          <span>→</span>
+        </a>
+        <a href="90-days.html" class="more-item">
+          What Happens When You Rate Your Life Every Day for 90 Days
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <p class="footer-copy">© 2026 Virello Development. Sweden.</p>
+      <div class="footer-links">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
