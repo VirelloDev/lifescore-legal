@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Your Driver Is Probably Not the Problem — PostRound</title>
+  <meta name="description" content="Most amateur golfers blame their driver. The data usually tells a different story. Here's what's actually costing you shots on the course.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --text: #1a1a18; --muted: #6b6b66; --hint: #9b9b96; --surface: #ffffff; --bg: #f5f4f0; --border: rgba(0,0,0,0.1); --accent: #0F6E56; --app-color: #0F6E56; }
+    @media (prefers-color-scheme: dark) { :root { --text: #e8e8e4; --muted: #9b9b96; --hint: #6b6b66; --surface: #1e1e1c; --bg: #161614; --border: rgba(255,255,255,0.1); --accent: #1D9E75; --app-color: #1D9E75; } }
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--text); background: var(--bg); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+    .page { max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+    nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 12px; }
+    .nav-logo { font-family: 'DM Serif Display', Georgia, serif; font-size: 17px; letter-spacing: -0.3px; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: #185FA5; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--app-color); font-weight: 500; }
+    .breadcrumb { font-size: 13px; color: var(--hint); margin-bottom: 2rem; display: flex; align-items: center; gap: 6px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--text); }
+    .article-header { margin-bottom: 2.5rem; }
+    .article-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--app-color); margin-bottom: 0.75rem; }
+    .article-header h1 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(24px, 4vw, 34px); line-height: 1.15; letter-spacing: -0.3px; margin-bottom: 1rem; }
+    .article-header .lead { font-size: 16px; color: var(--muted); line-height: 1.7; font-weight: 300; }
+    .article-body { font-size: 15px; line-height: 1.75; color: var(--text); }
+    .article-body p { margin-bottom: 1.25rem; font-weight: 300; }
+    .article-body h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: 20px; letter-spacing: -0.2px; margin-top: 2.25rem; margin-bottom: 0.75rem; }
+    hr { border: none; border-top: 0.5px solid var(--border); margin: 2.5rem 0; }
+    .cta-block { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 16px; }
+    .cta-icon { width: 44px; height: 44px; border-radius: 11px; background: var(--app-color); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cta-icon svg { width: 20px; height: 20px; }
+    .cta-text { flex: 1; }
+    .cta-text p { font-size: 13px; color: var(--muted); font-weight: 300; margin-bottom: 8px; line-height: 1.5; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; color: var(--surface); background: var(--text); border-radius: 6px; padding: 5px 11px; text-decoration: none; transition: opacity 0.15s; }
+    .cta-btn:hover { opacity: 0.75; }
+    .more-articles { margin-top: 3rem; }
+    .more-articles p { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hint); margin-bottom: 1rem; }
+    .more-list { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .more-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 1rem 1.25rem; text-decoration: none; color: var(--text); border-bottom: 0.5px solid var(--border); font-size: 14px; transition: background 0.15s; }
+    .more-item:last-child { border-bottom: none; }
+    .more-item:hover { background: var(--bg); }
+    .more-item span { color: var(--hint); font-size: 16px; flex-shrink: 0; }
+    footer { margin-top: 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .footer-copy { font-size: 12px; color: var(--hint); }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { font-size: 12px; color: var(--hint); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav>
+      <a href="https://virellodev.com" class="nav-logo">Virello <span>Development</span></a>
+      <div class="nav-links">
+        <a href="../index.html">Support</a>
+        <a href="index.html" class="active">Guides</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+    </nav>
+
+    <div class="breadcrumb">
+      <a href="../index.html">PostRound</a>
+      <span>›</span>
+      <a href="index.html">Guides</a>
+    </div>
+
+    <div class="article-header">
+      <p class="article-tag">PostRound</p>
+      <h1>Why Your Driver Is Probably Not the Problem</h1>
+      <p class="lead">Most amateur golfers blame their driver. The data usually tells a different story. Here's what's actually costing you shots on the course.</p>
+    </div>
+
+    <div class="article-body">
+      <p>Ask any amateur golfer what's holding their game back and the answer is usually the same: the driver. It's too inconsistent. The ball goes left. The ball goes right. If they could just hit it straight, everything else would fall into place.</p>
+      <p>For most golfers, this isn't true.</p>
+
+      <h2>Where amateur golfers actually lose shots</h2>
+      <p>Research consistently shows that amateur golfers lose a disproportionate number of shots in their short game — specifically within 100 yards of the green. Chips that don't make it to the green. Pitches that fly the green. Bunker shots that take three attempts.</p>
+      <p>The driver gets the attention because bad drives are visible and memorable. But the short game is where rounds are actually won and lost for most amateur players.</p>
+
+      <h2>The confirmation bias problem</h2>
+      <p>When you miss a fairway, you notice it immediately. It's obvious and frustrating. When you take an extra chip to get onto the green, it often doesn't register the same way — you're already thinking about the putt.</p>
+      <p>This is confirmation bias in action. You remember the bad drives because you expect them to be a problem. The short game mistakes slip by unnoticed, one shot at a time.</p>
+
+      <h2>How data changes the picture</h2>
+      <p>When you track your rounds consistently — logging how each area of your game performed, not just your total score — a more accurate picture emerges.</p>
+      <p>Many golfers who start tracking their rounds discover that their driver is actually performing reasonably well, and that their handicap is being held back by something they'd barely considered.</p>
+
+      <h2>What to do about it</h2>
+      <p>The first step is to track your rounds honestly. Rate your tee shots, irons, short game and putting after every round. After eight to ten rounds, patterns will emerge.</p>
+      <p>The second step is to direct your practice toward what the data shows, not what your gut tells you.</p>
+      <p>PostRound does both. It tracks your rounds, identifies your weaknesses and builds a training plan focused on the areas that are actually costing you shots.</p>
+    </div>
+
+    <hr>
+
+    <div class="cta-block">
+      <div class="cta-icon">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="8" r="4" stroke="white" stroke-width="1.5" opacity="0.9"/>
+          <path d="M10 12 L10 18" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+          <path d="M7 18 L13 18" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="cta-text">
+        <p>PostRound is free to download on the App Store.</p>
+        <a href="https://apps.apple.com/app/id6758979676" class="cta-btn" target="_blank">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download on the App Store
+        </a>
+      </div>
+    </div>
+
+    <div class="more-articles">
+      <p>More guides</p>
+      <div class="more-list">
+        <a href="track-handicap.html" class="more-item">
+          How to Lower Your Golf Handicap Faster by Tracking Your Rounds
+          <span>→</span>
+        </a>
+        <a href="training-plan.html" class="more-item">
+          How to Build a Golf Training Plan That Actually Works
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <p class="footer-copy">© 2026 Virello Development. Sweden.</p>
+      <div class="footer-links">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

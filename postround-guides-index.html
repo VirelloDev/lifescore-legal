@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostRound Guides — Golf Tips & Articles</title>
+  <meta name="description" content="Practical guides on tracking your golf rounds, understanding your game data, and building a training plan that actually works.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --text: #1a1a18; --muted: #6b6b66; --hint: #9b9b96; --surface: #ffffff; --bg: #f5f4f0; --border: rgba(0,0,0,0.1); --accent: #0F6E56; --app-color: #0F6E56; }
+    @media (prefers-color-scheme: dark) { :root { --text: #e8e8e4; --muted: #9b9b96; --hint: #6b6b66; --surface: #1e1e1c; --bg: #161614; --border: rgba(255,255,255,0.1); --accent: #1D9E75; --app-color: #1D9E75; } }
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--text); background: var(--bg); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+    .page { max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+    nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 12px; }
+    .nav-logo { font-family: 'DM Serif Display', Georgia, serif; font-size: 17px; letter-spacing: -0.3px; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: #185FA5; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--app-color); font-weight: 500; }
+    .app-header { display: flex; align-items: center; gap: 16px; margin-bottom: 2.5rem; }
+    .app-icon { width: 52px; height: 52px; border-radius: 13px; background: var(--app-color); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .app-icon svg { width: 24px; height: 24px; }
+    .app-header-text h1 { font-family: 'DM Serif Display', Georgia, serif; font-size: 26px; letter-spacing: -0.3px; line-height: 1.1; }
+    .app-header-text p { font-size: 14px; color: var(--muted); font-weight: 300; margin-top: 3px; }
+    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hint); margin-bottom: 1rem; }
+    .guides-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: 12px; overflow: hidden; }
+    .guide-card { background: var(--surface); padding: 1.25rem 1.5rem; text-decoration: none; color: inherit; display: block; transition: background 0.15s; }
+    .guide-card:hover { background: var(--bg); }
+    .guide-card h2 { font-size: 15px; font-weight: 500; line-height: 1.4; margin-bottom: 5px; }
+    .guide-card p { font-size: 13px; color: var(--muted); line-height: 1.55; font-weight: 300; }
+    .guide-card-arrow { float: right; color: var(--hint); font-size: 16px; margin-left: 12px; margin-top: 2px; }
+    footer { margin-top: 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .footer-copy { font-size: 12px; color: var(--hint); }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { font-size: 12px; color: var(--hint); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav>
+      <a href="https://virellodev.com" class="nav-logo">Virello <span>Development</span></a>
+      <div class="nav-links">
+        <a href="../index.html">Support</a>
+        <a href="index.html" class="active">Guides</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+    </nav>
+
+    <div class="app-header">
+      <div class="app-icon">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="8" r="4" stroke="white" stroke-width="1.5" opacity="0.9"/>
+          <path d="M10 12 L10 18" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+          <path d="M7 18 L13 18" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="app-header-text">
+        <h1>PostRound Guides</h1>
+        <p>Tips and articles on improving your golf game with data</p>
+      </div>
+    </div>
+
+    <p class="section-label">Articles</p>
+    <div class="guides-list">
+      <a href="track-handicap.html" class="guide-card">
+        <span class="guide-card-arrow">→</span>
+        <h2>How to Lower Your Golf Handicap Faster by Tracking Your Rounds</h2>
+        <p>Most golfers practice the wrong things. Here's how tracking your rounds reveals where you're actually losing shots.</p>
+      </a>
+      <a href="driver-not-problem.html" class="guide-card">
+        <span class="guide-card-arrow">→</span>
+        <h2>Why Your Driver Is Probably Not the Problem</h2>
+        <p>Most amateur golfers blame their driver. The data usually tells a different story.</p>
+      </a>
+      <a href="training-plan.html" class="guide-card">
+        <span class="guide-card-arrow">→</span>
+        <h2>How to Build a Golf Training Plan That Actually Works</h2>
+        <p>Generic practice routines don't work for everyone. Here's how to build a plan based on your own game data.</p>
+      </a>
+    </div>
+
+    <footer>
+      <p class="footer-copy">© 2026 Virello Development. Sweden.</p>
+      <div class="footer-links">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

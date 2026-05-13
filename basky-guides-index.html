@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basky Guides — Grocery Shopping Tips & Articles</title>
+  <meta name="description" content="Practical guides on shared grocery lists, recipe import, and smarter supermarket shopping with Basky.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --text: #1a1a18; --muted: #6b6b66; --hint: #9b9b96; --surface: #ffffff; --bg: #f5f4f0; --border: rgba(0,0,0,0.1); --accent: #1A8F8F; --app-color: #1A8F8F; }
+    @media (prefers-color-scheme: dark) { :root { --text: #e8e8e4; --muted: #9b9b96; --hint: #6b6b66; --surface: #1e1e1c; --bg: #161614; --border: rgba(255,255,255,0.1); --accent: #2BBFBF; --app-color: #2BBFBF; } }
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--text); background: var(--bg); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+    .page { max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+    nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 12px; }
+    .nav-logo { font-family: 'DM Serif Display', Georgia, serif; font-size: 17px; letter-spacing: -0.3px; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: #185FA5; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--app-color); font-weight: 500; }
+    .app-header { display: flex; align-items: center; gap: 16px; margin-bottom: 2.5rem; }
+    .app-icon { width: 52px; height: 52px; border-radius: 13px; background: var(--app-color); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 24px; }
+    .app-header-text h1 { font-family: 'DM Serif Display', Georgia, serif; font-size: 26px; letter-spacing: -0.3px; line-height: 1.1; }
+    .app-header-text p { font-size: 14px; color: var(--muted); font-weight: 300; margin-top: 3px; }
+    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--hint); margin-bottom: 1rem; }
+    .guides-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: 12px; overflow: hidden; }
+    .guide-card { background: var(--surface); padding: 1.25rem 1.5rem; text-decoration: none; color: inherit; display: block; transition: background 0.15s; }
+    .guide-card:hover { background: var(--bg); }
+    .guide-card h2 { font-size: 15px; font-weight: 500; line-height: 1.4; margin-bottom: 5px; }
+    .guide-card p { font-size: 13px; color: var(--muted); line-height: 1.55; font-weight: 300; }
+    .guide-card-arrow { float: right; color: var(--hint); font-size: 16px; margin-left: 12px; margin-top: 2px; }
+    footer { margin-top: 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .footer-copy { font-size: 12px; color: var(--hint); }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { font-size: 12px; color: var(--hint); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav>
+      <a href="https://virellodev.com" class="nav-logo">Virello <span>Development</span></a>
+      <div class="nav-links">
+        <a href="../index.html">Support</a>
+        <a href="index.html" class="active">Guides</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+    </nav>
+
+    <div class="app-header">
+      <div class="app-icon">🛒</div>
+      <div class="app-header-text">
+        <h1>Basky Guides</h1>
+        <p>Tips and articles on smarter grocery shopping</p>
+      </div>
+    </div>
+
+    <p class="section-label">Articles</p>
+    <div class="guides-list">
+      <a href="share-grocery-list.html" class="guide-card">
+        <span class="guide-card-arrow">→</span>
+        <h2>How to Share a Grocery List with Your Partner (And Actually Stay in Sync)</h2>
+        <p>Tired of calling each other from the store? Here's how a shared list keeps your whole household in sync in real time.</p>
+      </a>
+      <a href="import-recipes.html" class="guide-card">
+        <span class="guide-card-arrow">→</span>
+        <h2>How to Import Recipes Into Your Shopping List Automatically</h2>
+        <p>Stop copying ingredients one by one. Here's how to import any recipe from any website directly into your shopping list in seconds.</p>
+      </a>
+      <a href="organise-by-aisle.html" class="guide-card">
+        <span class="guide-card-arrow">→</span>
+        <h2>How to Organise Your Grocery List by Store Aisle (And Never Walk Back Again)</h2>
+        <p>Stop backtracking in the supermarket. Here's how to sort your list by your store's layout so you shop in one smooth pass.</p>
+      </a>
+    </div>
+
+    <footer>
+      <p class="footer-copy">© 2026 Virello Development. Sweden.</p>
+      <div class="footer-links">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
